@@ -10,11 +10,6 @@ body {
     flex-direction: row;
 }
 
-.divergence-card {
-    width: 288px;
-    margin: 16px;
-}
-
 .divergence-profile {
     min-width: 336px;
     padding: 8px;
@@ -35,6 +30,11 @@ body {
 }
 
 .divergence-profile__card .mdl-card__menu {
+    margin: 16px;
+}
+
+.divergence-card {
+    width: 288px;
     margin: 16px;
 }
 
