@@ -1,0 +1,37 @@
+
+body {
+    background: url('https://cdn-images.xda-developers.com/direct/3/4/9/3/6/1/6/PureNexus_Wallpaper-1.jpg') center / cover fixed;
+}
+
+.divergence-card {
+    width: 512px;
+    margin: 16px auto 0;
+}
+
+.divergence-profile > .mdl-card__title {
+    margin: 16px 16px 0;
+    height: 320px;
+    color: #FFF;
+    background: url('https://avatars3.githubusercontent.com/u/3019034?v=3&s=460');
+    background-size: 100%;
+}
+
+.divergence-profile > .mdl-card__supporting-text {
+    height: 24px;
+}
+
+.divergence-profile > .mdl-card__title > .mdl-card__menu {
+    margin: 16px;
+}
+
+.divergence-project__url {
+    color: #757575;
+}
+
+.divergence-icon {
+    height: 40px;
+    width: 40px;
+
+    float: left;
+    margin-right: 16px;
+}
