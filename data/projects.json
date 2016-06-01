@@ -6,7 +6,7 @@
   "HDFS-Logger",
   "http.io",
   "JSDoc-Parser",
-  "Kafka-Pipeline",
+  "space.divergence.kafka.pipeline",
   "Node-Codec",
   "Node-HSocket",
   "Node-Logger",

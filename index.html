@@ -14,64 +14,76 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="divergence-card divergence-profile mdl-card mdl-shadow--2dp"
-         ng-controller="ProfileCtrl">
-        <div class="mdl-card__title mdl-card--expand">
-            <h2 class="mdl-card__title-text">{{ profile.name }}</h2>
-            <div class="mdl-card__menu">
-                <a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"
-                   href="{{ profile.linkedin_link }}">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"
-                   href="{{ profile.github_link }}">
-                    <i class="fa fa-github" aria-hidden="true"></i>
-                </a>
+
+    <div class="mdl-layout mdl-js-layout">
+        <main class="divergence-content mdl-layout__content ">
+
+            <div class="divergence-profile">
+                <div class="divergence-profile__card divergence-card mdl-card mdl-shadow--2dp"
+                     ng-controller="ProfileCtrl">
+
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">{{ profile.name }}</h2>
+
+                        <div class="mdl-card__menu">
+                            <a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"
+                               href="{{ profile.linkedin_link }}">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"
+                               href="{{ profile.github_link }}">
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="mdl-card__supporting-text">
+                        <i class="fa fa-envelope-o" aria-hidden="true"> {{ profile.email }}</i>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="mdl-card__supporting-text">
-            <i class="fa fa-envelope-o" aria-hidden="true"> {{ profile.email }}</i>
-        </div>
+
+            <div class="divergence-grid">
+                <div class="mdl-grid" ng-controller="ProjectsCtrl">
+                    <div class="divergence-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col"
+                         ng-repeat="project in projects">
+                        <div class="mdl-card__title">
+                            <a class="divergence-project__url" href="{{ project.html_url }}">
+
+                                <h2 class="mdl-card__title-text">{{ project.name }}</h2>
+
+                                <div class="mdl-card__menu">
+                                    <div ng-switch="project.technology">
+                                        <div ng-switch-when="scala">
+                                            <img class="divergence-icon" src="icons/2/scala.svg">
+                                        </div>
+                                        <div ng-switch-when="node">
+                                            <img class="divergence-icon" src="icons/2/node.svg">
+                                        </div>
+                                        <div ng-switch-when="python">
+                                            <img class="divergence-icon" src="icons/2/python.svg">
+                                        </div>
+                                        <div ng-switch-when="docker">
+                                            <img class="divergence-icon" src="icons/2/docker.svg">
+                                        </div>
+                                        <div ng-switch-when="gulp">
+                                            <img class="divergence-icon" src="icons/2/gulp.svg">
+                                        </div>
+                                        <div ng-switch-default>
+                                            <img class="divergence-icon" src="icons/1/something.svg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            {{ project.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-
-    <div class="divergence-card mdl-card mdl-shadow--2dp">
-
-            <ul class="demo-list-three mdl-list"
-                ng-controller="ProjectsCtrl">
-                <li class="mdl-list__item mdl-list__item--three-line"
-                    ng-repeat="project in projects">
-                    <span class="mdl-list__item-primary-content">
-
-                      <div ng-switch="project.technology">
-                          <div ng-switch-when="scala">
-                              <img class="divergence-icon" src="icons/2/scala.svg">
-                          </div>
-                          <div ng-switch-when="node">
-                              <img class="divergence-icon" src="icons/2/node.svg">
-                          </div>
-                          <div ng-switch-when="python">
-                              <img class="divergence-icon" src="icons/2/python.svg">
-                          </div>
-                          <div ng-switch-when="docker">
-                              <img class="divergence-icon" src="icons/2/docker.svg">
-                          </div>
-                          <div ng-switch-when="gulp">
-                              <img class="divergence-icon" src="icons/2/gulp.svg">
-                          </div>
-                          <div ng-switch-default>
-                              <img class="divergence-icon" src="icons/1/something.svg">
-                          </div>
-                      </div>
-
-                      <a class="divergence-project__url"
-                         href="{{ project.html_url }}">{{ project.name }}</a>
-                      <span class="mdl-list__item-text-body">
-                        {{ project.description }}
-                      </span>
-                    </span>
-                </li>
-            </ul>
-
-        </div>
 </body>
 </html>
